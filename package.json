@@ -1,5 +1,5 @@
 {
-  "name": "zemoga test",
+  "name": "zemoga-test",
   "version": "1.0.0",
   "description": "Test zemoga",
   "main": "index.js",
@@ -43,10 +43,6 @@
     "flow": "flow",
     "flow:coverage": "npm run flow && flow-coverage-report",
     "storybook": "start-storybook"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://racechip-ouluwj@git.codesubmit.io/racechip/react-wookie-movies-ouluwj"
   },
   "author": "",
   "license": "ISC",

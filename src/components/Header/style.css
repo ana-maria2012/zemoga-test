@@ -1,3 +1,10 @@
-h1 {
-    text-align: center;
+#root {
+    padding: 0 100px;
+    font-family: 'Lato', sans-serif;
 }
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+}
+

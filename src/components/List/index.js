@@ -1,31 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom' 
 import './style.css'
 
 const List = props => {
-    const { movies } = props
+    const { characters } = props
+    console.log(characters)
 
     return (
-        <>
-            { Object.keys(movies).map(genre => {
-               if (movies[genre].length) {
-                return (<ul key={genre}>
-                    <h2>{`Genre ${genre}`}</h2>
-                    { movies[genre].map((movie, index) => {
-                        return (
-                            <div key={index} className="card">
-                                <Link to={`/${movie.slug}`}><img src={movie.backdrop} /></Link>
-                                <Link to={`/${movie.slug}`}>{movie.title}</Link>
-                            </div>
-                        )
-                    })}
-                </ul>)
-               } else {
-                   return null
-               }
-            }) }
-        </>
+            <>
+            { Object.keys(characters).map((item, index) => {
+                return <div className="card">
+                            <ul>
+                                <h2 key={index}>{item}</h2>
+                            </ul>
+                        </div>
+                }) }
+            </>
     )
 }
-
 export default List

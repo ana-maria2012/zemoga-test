@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Header from './Header'
-import Search from './Search'
+import Past from '../pages/Past'
+import How from '../pages/How'
+import Logi from '../pages/Logi'
+//import Search from './Search'
 import List from './List'
-import Detail from './Detail'
 import { Route } from 'react-router-dom'
 
-const request = new Request('https://wookie.codesubmit.io/movies', {
+const request = new Request('../../public/api.json', {
     headers: new Headers({
-        Authorization: 'Bearer Wookie2019'
-    }),
-    method: 'GET'
+        "Content-Type": "application/json",
+        Accept: "application/json"
+    })
 })
 
 const getData = () => {
@@ -19,63 +21,46 @@ const getData = () => {
 }
 
 const App = () => {
-    const [movies, setMovies] = useState({})
-    const [originalMovies, setOriginalMovies] = useState([])
-    const [filterMovie, setFilterMovies] = useState([])
+    const [characters, setCharacters] = useState({})
+//     const [originalcharacters, setOriginalcharacters] = useState([])
+//     const [fiterCharacter, setFiltercharacters] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
-            const movies = await getData()
-            setOriginalMovies(movies)
-            const listMovies = getMoviesByCategory(movies.movies)
-
-            setMovies(listMovies)
+            const characters = await getData()
+            //setOriginalcharacters(characters)
+            //const listcharacters = getcharacters(characters)
+            setCharacters(characters)
         }
 
         fetchData()
     }, [])
 
-    const getMoviesByCategory = (movies) => {
-        let genres = movies.map(movie => movie.genres).flat()
-        const genresMain = new Set(genres)
-        const category = {}
-        for(const key of genresMain) {
-            category[key] =  []
-        }
+//     const filtercharacters = (term) => {
+//         if (term) {
+//             const filteredcharacters = originalcharacters.characters.filter(movie => movie.title.toLowerCase().includes(term.toLowerCase()))
+//             // set state with filtered characters
+//             const result = Object.keys(characters).map((item) => {
+//                 return characters[item].filter(movie => movie.title === filteredcharacters[0].title)
+//             })
 
-        movies.forEach(item => {
-            genresMain.forEach(genre => {
-                if(item.genres.includes(genre)) {
-                    category[genre].push(item)
-                }
-            })
-        })
+//             setFiltercharacters(result)
+//         }
 
-        return category
-    }
-
-    const filterMovies = (term) => {
-        if (term) {
-            const filteredMovies = originalMovies.movies.filter(movie => movie.title.toLowerCase().includes(term.toLowerCase()))
-            // set state with filtered movies
-            const result = Object.keys(movies).map((item) => {
-                return movies[item].filter(movie => movie.title === filteredMovies[0].title)
-            })
-
-            setFilterMovies(result)
-        }
-
-        else {
-            setFilterMovies(originalMovies)
-        }
-    }
+//         else {
+//             setFiltercharacters(originalcharacters)
+//         }
+//     }
 
     return (
         <>
-            <Header text='WOOKIE MOVIES' />
-            <Search search={filterMovies}/>
-            <Route exact path='/' render={(() => <List movies={filterMovie.length ? filterMovie : movies}/> )} />
-            <Route exact path='/:id' render={(() => <Detail movies={originalMovies} /> )} />
+            <div className="top-header">
+                <Header text='Rule of Thumb' />
+                <Route exact path="/pages/Past" component={Past} />
+                <Route exact path="/pages/How " component={How} />
+                <Route exact path="/pages/Logi" component={Logi} />
+            </div>
+            <Route exact path='/' render={(() => <List characters={characters}/> )} />
         </>
     )
 }

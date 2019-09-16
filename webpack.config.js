@@ -5,7 +5,7 @@ module.exports = {
   entry: {
     index: ['babel-polyfill', './src/index.js']
   },
-  mode: 'production',
+  mode: 'development',
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
