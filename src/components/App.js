@@ -30,7 +30,7 @@ const App = () => {
             const characters = await getData()
             //setOriginalcharacters(characters)
             //const listcharacters = getcharacters(characters)
-            setCharacters(characters)
+            setCharacters(characters.characters)
         }
 
         fetchData()

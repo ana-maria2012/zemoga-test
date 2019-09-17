@@ -6,7 +6,7 @@
             "character": "Pope Francis",
             "sectiontime": 1,
             "section": "Religion",
-            "img": "./src/assets/Papa.png",
+            "img": "./public/assets/Papa.png",
             "description": "He's talking tough on clergy sexual abuse, but he is just another papal pervert protector? (thumbs down) or a true pedophile pinishing pontiff(thumbs up)",
             "upvotes": 0,
             "downvotes": 0
@@ -17,6 +17,7 @@
             "character": "Kanye West",
             "sectiontime": 1,
             "section": "Entertainment",
+            "img": "./public/assets/Kanye.png",
             "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
             "upvotes": 0,
             "downvotes": 0
@@ -27,6 +28,7 @@
             "character": "Mark Zuckerberg",
             "sectiontime": 1,
             "section": "Business",
+            "img": "./public/assets/Mark.png",
             "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
             "upvotes": 0,
             "downvotes": 0
@@ -37,6 +39,7 @@
             "character": "Cristina Fernández",
             "sectiontime": 1,
             "section": "Politics",
+            "img": "./public/assets/Cristina.png",
             "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
             "upvotes": 0,
             "downvotes": 0
@@ -47,6 +50,7 @@
             "character": "Malala Yousafzai",
             "sectiontime": 1,
             "section": "Entertainment",
+            "img": "./public/assets/Malala.png",
             "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
             "upvotes": 0,
             "downvotes": 0

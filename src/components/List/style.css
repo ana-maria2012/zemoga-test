@@ -1,16 +1,4 @@
-.card {
-    display: inline-block;
-    width: 100px;
-    vertical-align: top;
-    margin: 10px 32px;
-}
-
-.card img {
-    height: 90px;
-    width: 100px;
-    display: block;
-}
-
-img {
-    border: 1px solid white;
+ul li img {
+    height: 200px;
+    width: 200px;
 }
